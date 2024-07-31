@@ -70,7 +70,8 @@ namespace FullCourseCS
             Car car1 = new Car("Ford", "Fusion", 2019, "Black");
             car1.Drive();
 
-            HuntRifle huntRifle = new HuntRifle("8 Rounds Magazine","7.62 Ammo");
+            HuntRifle huntRifle = new HuntRifle("8 Rounds Magazine", 8);
+            huntRifle.Carbine();
         }        
     }
 }
