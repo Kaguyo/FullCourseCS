@@ -21,7 +21,7 @@ namespace FullCourseCS
         }
         public void Drive() 
         {
-            Console.WriteLine($"You are driving a {color} {make} {model}");
+            Console.WriteLine($"You are driving a {color} {make} {model} and it's a {year} year model car.");
         }
     }
 }

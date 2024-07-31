@@ -62,13 +62,15 @@ namespace FullCourseCS
             }// END IF
             Console.WriteLine("\nFim da aula 1.\n");
             //  Class 1 END         ===================================================
-            Characters Naruto = new Characters();
-            Naruto.name = "Naruto Uzumaki";
-            Naruto.age = 15;
-            Naruto.Introduce();
+            Characters naruto = new Characters();
+            naruto.name = "Naruto Uzumaki";
+            naruto.age = 15;
+            naruto.Introduce();
            
             Car car1 = new Car("Ford", "Fusion", 2019, "Black");
             car1.Drive();
+
+            HuntRifle huntRifle = new HuntRifle("8 Rounds Magazine","7.62 Ammo");
         }        
     }
 }
