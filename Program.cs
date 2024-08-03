@@ -80,7 +80,7 @@ namespace FullCourseCS
                 Console.WriteLine("\nFim da aula 2.\n");
             }// END IF
             //  Class 2 END         ===================================================
-            bool playAula3 = true;
+            bool playAula3 = false;
             if (playAula3)
             {
                 // Abstract classes = modifier that indicates missing components or incomplete implementation
@@ -102,7 +102,7 @@ namespace FullCourseCS
                 cat.move(cat.id, cat.speed, cat.weight, cat.type, cat.maxSpeed);
 
                 deer.maxSpeed = 65;
-                deer.speed = 40;
+                deer.speed = 0;
                 deer.id = "Osvaldo";
                 deer.weight = 70.7;
                 deer.type = "Prey";
@@ -110,6 +110,87 @@ namespace FullCourseCS
 
                 Console.WriteLine("\nFim da aula 3.\n");
             }// END IF
-        }   //  Class 3 END         ===================================================
+            //  Class 3 END         ===================================================
+            bool playAula4 = false;
+            if (playAula4)
+            {
+                Player1[] backpack = new Player1[3];
+
+                Player1 slot1 = new Player1("Large Knife");
+                Player1 slot2 = new Player1("5.56 Ammo");
+                Player1 slot3 = new Player1("Makarov");
+
+                backpack[0] = slot1;
+                backpack[1] = slot2;
+                backpack[2] = slot3;
+
+                foreach (Player1 slot in backpack)
+                { Console.WriteLine(slot.itemName); }
+
+                //  Logica de upgrade item  ==========
+                Console.WriteLine("\nApós upgrade:\n");
+                Player1.UpgradeItem(slot1, slot1.itemName + "(Sharpness+)");
+                foreach (Player1 slot in backpack)
+                { Console.WriteLine(slot.itemName); }
+
+                Console.WriteLine("\nFim da aula 4.\n");
+            }// END IF
+            //  Class 4 END         ===================================================
+            bool playAula5 = true;
+            if (playAula5)
+            {   /* Override method. to create an overriding method,
+                 the method that is inherited must be virtual, abstract or overrided. */
+                M4a1 m4a1 = new M4a1();
+                Kar98k kar98k = new Kar98k();
+                kar98k.gunName = "Kar98K";
+                kar98k.capacityMag = 5;
+                kar98k.DisplayGunName();
+                kar98k.DisplayMagazineSize();
+
+                Console.WriteLine(); // ================ x =================
+
+                m4a1.gunName = "M4A1";
+                m4a1.capacityMag = 30;
+                m4a1.DisplayGunName();
+                m4a1.DisplayMagazineSize();
+                Console.WriteLine("\nFim da aula 5.\n");
+            }// END IF
+            //  Class 5 END         ===================================================
+        }
+    }
+    class Armas
+    {
+        public String gunName;
+        public int capacityMag;
+        public virtual void DisplayGunName()
+        {
+            Console.WriteLine("The gun has a name");
+        }
+        public virtual void DisplayMagazineSize() 
+        {
+            Console.WriteLine("The gun has bullets capacity");
+        }
+    }
+    class M4a1 : Armas
+    {
+        public override void DisplayGunName()
+        {
+            Console.WriteLine($"Gun name: {gunName}");
+        }
+        public override void DisplayMagazineSize()
+        {
+            Console.WriteLine($"Capacity: {capacityMag}");
+        }
+    }
+    class Kar98k : Armas
+    {
+        public override void DisplayGunName() 
+        {
+            Console.WriteLine($"Gun name: {gunName}");
+        }
+        public override void DisplayMagazineSize()
+        {
+            Console.WriteLine($"Capacity: {capacityMag}");
+        }
     }
 }

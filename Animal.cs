@@ -20,11 +20,15 @@ namespace FullCourseCS
             {
                 Console.WriteLine($"{animalId} is hunting! ({animalSpeed} Km/h).");
             }
-            else if (animalType == "Prey" && animalMaxSpeed / animalSpeed <= 1.3333333333)
+            else if ((animalType == "Predator" || animalType == "Prey") && (animalMaxSpeed / animalSpeed > 1.3333333333 && animalMaxSpeed / animalSpeed <= 2))
+            {
+                Console.WriteLine($"{animalId} is running. ({animalSpeed} Km/h).");
+            }
+            else if (animalType == "Prey" && animalMaxSpeed / animalSpeed < 1.3333333333)
             {
                 Console.WriteLine($"{animalId} is fleeing! ({animalSpeed} Km/h).");
             }
-            else if (animalSpeed == 0) 
+            else if (animalSpeed == 0)
             {
                 Console.WriteLine($"{animalId} is staying still.");
             }
