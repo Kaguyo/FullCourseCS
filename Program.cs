@@ -142,6 +142,7 @@ namespace FullCourseCS
                  the method that is inherited must be virtual, abstract or overrided. */
                 M4a1 m4a1 = new M4a1();
                 Kar98k kar98k = new Kar98k();
+
                 kar98k.gunName = "Kar98K";
                 kar98k.capacityMag = 5;
                 kar98k.DisplayGunName();
@@ -153,6 +154,14 @@ namespace FullCourseCS
                 m4a1.capacityMag = 30;
                 m4a1.DisplayGunName();
                 m4a1.DisplayMagazineSize();
+
+                Armas[] armas = { m4a1, kar98k };
+                Console.WriteLine();
+                foreach (Armas arma in armas) 
+                {
+                    arma.Arsenal();
+                }
+
                 Console.WriteLine("\nFim da aula 5.\n");
             }// END IF
             //  Class 5 END         ===================================================
@@ -160,6 +169,10 @@ namespace FullCourseCS
     }
     class Armas
     {
+        public virtual void Arsenal()
+        {
+
+        }
         public String gunName;
         public int capacityMag;
         public virtual void DisplayGunName()
@@ -181,6 +194,10 @@ namespace FullCourseCS
         {
             Console.WriteLine($"Capacity: {capacityMag}");
         }
+        public override void Arsenal()
+        {
+            Console.WriteLine($"{gunName} is stored in Arsenal");
+        }
     }
     class Kar98k : Armas
     {
@@ -192,5 +209,9 @@ namespace FullCourseCS
         {
             Console.WriteLine($"Capacity: {capacityMag}");
         }
-    }
+        public override void Arsenal()
+        {
+            Console.WriteLine($"{gunName} is stored in Arsenal");
+        }
+    }//  Class 5 END         ===================================================
 }
