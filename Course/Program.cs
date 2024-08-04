@@ -1,4 +1,5 @@
 ﻿using System;
+using NAudio.Wave;
 
 namespace FullCourseCS.Course
 {
@@ -198,7 +199,7 @@ namespace FullCourseCS.Course
                     EscolhaSkill != "0" &&
                     EscolhaSkill != "stop")
                     {
-                        Console.Write("Select a Skill: ");
+                        Console.Write("\nSelect a Skill: ");
                         EscolhaSkill = Console.ReadLine().ToLower();
                     }
                     if (EscolhaSkill == "1")
