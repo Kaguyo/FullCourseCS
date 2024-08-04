@@ -35,6 +35,7 @@ namespace FullCourseCS.Course.CharactersFate
         public void Excalibur()
         {
             Console.Write($"{name}: ");
+            PerformExcalibur1();
         }
         private void PerformComment1()
         {
@@ -42,7 +43,7 @@ namespace FullCourseCS.Course.CharactersFate
             foreach (char c in comment)
             {
                 Console.Write(c);
-                Thread.Sleep(0010); // Meio milissegundo de pausa por caractere
+                Thread.Sleep(0010);
             }
             Console.WriteLine(); // Para adicionar uma nova linha após o comentário
             Console.ReadKey();
@@ -53,7 +54,7 @@ namespace FullCourseCS.Course.CharactersFate
             foreach (char c in comment)
             {
                 Console.Write(c);
-                Thread.Sleep(0010); // Meio milissegundo de pausa por caractere
+                Thread.Sleep(0010);
             }
             Console.WriteLine(); // Para adicionar uma nova linha após o comentário
             Console.ReadKey();
@@ -64,7 +65,7 @@ namespace FullCourseCS.Course.CharactersFate
             foreach (char c in comment)
             {
                 Console.Write(c);
-                Thread.Sleep(0010); // Meio milissegundo de pausa por caractere
+                Thread.Sleep(0010);
             }
             Console.WriteLine(); // Para adicionar uma nova linha após o comentário
             Console.ReadKey();
@@ -75,9 +76,33 @@ namespace FullCourseCS.Course.CharactersFate
             foreach (char c in comment)
             {
                 Console.Write(c);
-                Thread.Sleep(0010); // Meio milissegundo de pausa por caractere
+                Thread.Sleep(0010);
             }
             Console.WriteLine(); // Para adicionar uma nova linha após o comentário
+            Console.ReadKey();
+        }
+        private static void PerformExcalibur1()
+        {
+            string comment = "Sheathed in the breath of the planet,\na torrent of shining life.\nFeel its wrath.\nEXCALIBUR ! !";
+            foreach (char c in comment)
+            {
+                if (c == '\n')
+                {
+                    Console.Write(c);
+                    Thread.Sleep(500);
+                }
+                else
+                {
+                    Console.Write(c);
+                }
+                if (c == 'X' && (comment.Contains("EXCALIBUR") || comment.Contains("EX")) &&
+                    comment.IndexOf('X') == comment.IndexOf("EX", StringComparison.OrdinalIgnoreCase) + 1)
+                {
+                    Thread.Sleep(500);
+                }
+                Thread.Sleep(10);
+            }
+            Console.WriteLine();
             Console.ReadKey();
         }
     }

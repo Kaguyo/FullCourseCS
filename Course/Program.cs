@@ -168,17 +168,65 @@ namespace FullCourseCS.Course
             bool playAula6 = true;
             if (playAula6)
             {
-                FullCourseCS.Course.CharactersFate.Artoria artoria = new FullCourseCS.Course.CharactersFate.Artoria();
-                artoria.name = "Artoria";
-                artoria.SwordSkill();
-                FullCourseCS.Course.CharactersFate.Mordred mordred = new FullCourseCS.Course.CharactersFate.Mordred();
-                FullCourseCS.Course.CharactersFate.Tristan tristan = new FullCourseCS.Course.CharactersFate.Tristan();
-                FullCourseCS.Course.CharactersFate.Baobhan baobhan = new FullCourseCS.Course.CharactersFate.Baobhan();
-                FullCourseCS.Course.CharactersFate.FirstHassan firstHassan = new FullCourseCS.Course.CharactersFate.FirstHassan();
-                FullCourseCS.Course.CharactersFate.Okada okada = new FullCourseCS.Course.CharactersFate.Okada();
+                String PararJogo = "";
+                String EscolhaSkill = "";
+                while (PararJogo != "stop" && PararJogo != "0")
+                {
+                    FullCourseCS.Course.CharactersFate.Artoria artoria = new FullCourseCS.Course.CharactersFate.Artoria();
+                    artoria.name = "Artoria";
 
+                    Console.WriteLine("===============");
+                    WriteColored("Skills", ConsoleColor.Green);
+                    Console.WriteLine(":");
+                    Console.WriteLine("===============");
+
+                    Console.Write("Basic Skill (");
+                    WriteColored("1", ConsoleColor.Green);
+                    Console.WriteLine(")");
+
+                    Console.Write("Ultimate Skill (");
+                    WriteColored("2", ConsoleColor.Green);
+                    Console.WriteLine(")");
+
+                    Console.Write("Desistir (");
+                    WriteColored("0", ConsoleColor.Green);
+                    Console.Write(" / ");
+                    WriteColored("STOP", ConsoleColor.Green);
+                    Console.WriteLine(")");
+                    while (EscolhaSkill != "1" &&
+                    EscolhaSkill != "2" &&
+                    EscolhaSkill != "0" &&
+                    EscolhaSkill != "stop")
+                    {
+                        Console.Write("Select a Skill: ");
+                        EscolhaSkill = Console.ReadLine().ToLower();
+                    }
+                    if (EscolhaSkill == "1")
+                    {
+                        artoria.SwordSkill();
+                        EscolhaSkill = "";
+                    }
+                    else if (EscolhaSkill == "2")
+                    {
+                        artoria.Excalibur();
+                        EscolhaSkill = "";
+                    }
+                    else if (EscolhaSkill == "0" ||
+                    EscolhaSkill == "stop") { break; }
+                    FullCourseCS.Course.CharactersFate.Mordred mordred = new FullCourseCS.Course.CharactersFate.Mordred();
+                    FullCourseCS.Course.CharactersFate.Tristan tristan = new FullCourseCS.Course.CharactersFate.Tristan();
+                    FullCourseCS.Course.CharactersFate.Baobhan baobhan = new FullCourseCS.Course.CharactersFate.Baobhan();
+                    FullCourseCS.Course.CharactersFate.FirstHassan firstHassan = new FullCourseCS.Course.CharactersFate.FirstHassan();
+                    FullCourseCS.Course.CharactersFate.Okada okada = new FullCourseCS.Course.CharactersFate.Okada();
+                }
             }// END IF
             //  Class 6 END         ===================================================
+        }
+        static void WriteColored(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
         }
     }
 }
