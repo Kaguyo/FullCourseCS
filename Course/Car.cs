@@ -4,22 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullCourseCS
+namespace FullCourseCS.Course
 {
     public class Car
     {
-        String make;
-        String model;
+        string make;
+        string model;
         int year;
-        String color;
-        public Car(String make, String model, int year, String color)
+        string color;
+        public Car(string make, string model, int year, string color)
         {
             this.make = make;
             this.model = model;
             this.year = year;
             this.color = color;
         }
-        public void Drive() 
+        public void Drive()
         {
             Console.WriteLine($"You are driving a {color} {make} {model} and it's a {year} year model car.");
         }

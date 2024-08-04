@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullCourseCS
+namespace FullCourseCS.Course
 {
     static class Aula1
     {
         // ======================================
-        public static void slashEnemy(String TARGET)
+        public static void slashEnemy(string TARGET)
         {
             Console.WriteLine("Slashes " + TARGET);
         }

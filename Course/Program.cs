@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FullCourseCS
+namespace FullCourseCS.Course
 {
     class Program
     {
@@ -9,7 +9,7 @@ namespace FullCourseCS
             bool playAula1 = false;
             if (playAula1)
             {
-                String target = "Enemy";
+                string target = "Enemy";
                 Aula1.slashEnemy(target);
 
                 double a, b;
@@ -46,7 +46,7 @@ namespace FullCourseCS
                     Console.WriteLine("Enter ONLY numbers!\n");
                 }// END TRY
 
-                String[,] personagens = { {"TrailBlazer", "Danheng","March7th","Asta", "Himeko", "Welt", "Herta", "Arlan"},
+                string[,] personagens = { {"TrailBlazer", "Danheng","March7th","Asta", "Himeko", "Welt", "Herta", "Arlan"},
                                           {"Seele", "Bronya", "Pela", "Clara", "Sampo", "Serval", "Gepard", "Yanqing"},
                                           {"Kafka", "SilverWolf", "Blade", "Tingyun", "Lynx", "Hook", "Topaz","Dr.Ratio"}
                                         };
@@ -136,7 +136,7 @@ namespace FullCourseCS
                 Console.WriteLine("\nFim da aula 4.\n");
             }// END IF
             //  Class 4 END         ===================================================
-            bool playAula5 = true;
+            bool playAula5 = false;
             if (playAula5)
             {   /* Override method. to create an overriding method,
                  the method that is inherited must be virtual, abstract or overrided. */
@@ -157,7 +157,7 @@ namespace FullCourseCS
 
                 Armas[] armas = { m4a1, kar98k };
                 Console.WriteLine();
-                foreach (Armas arma in armas) 
+                foreach (Armas arma in armas)
                 {
                     arma.Arsenal();
                 }
@@ -165,53 +165,20 @@ namespace FullCourseCS
                 Console.WriteLine("\nFim da aula 5.\n");
             }// END IF
             //  Class 5 END         ===================================================
-        }
-    }
-    class Armas
-    {
-        public virtual void Arsenal()
-        {
+            bool playAula6 = true;
+            if (playAula6)
+            {
+                FullCourseCS.Course.CharactersFate.Artoria artoria = new FullCourseCS.Course.CharactersFate.Artoria();
+                artoria.name = "Artoria";
+                artoria.SwordSkill();
+                FullCourseCS.Course.CharactersFate.Mordred mordred = new FullCourseCS.Course.CharactersFate.Mordred();
+                FullCourseCS.Course.CharactersFate.Tristan tristan = new FullCourseCS.Course.CharactersFate.Tristan();
+                FullCourseCS.Course.CharactersFate.Baobhan baobhan = new FullCourseCS.Course.CharactersFate.Baobhan();
+                FullCourseCS.Course.CharactersFate.FirstHassan firstHassan = new FullCourseCS.Course.CharactersFate.FirstHassan();
+                FullCourseCS.Course.CharactersFate.Okada okada = new FullCourseCS.Course.CharactersFate.Okada();
 
-        }
-        public String gunName;
-        public int capacityMag;
-        public virtual void DisplayGunName()
-        {
-            Console.WriteLine("The gun has a name");
-        }
-        public virtual void DisplayMagazineSize() 
-        {
-            Console.WriteLine("The gun has bullets capacity");
+            }// END IF
+            //  Class 6 END         ===================================================
         }
     }
-    class M4a1 : Armas
-    {
-        public override void DisplayGunName()
-        {
-            Console.WriteLine($"Gun name: {gunName}");
-        }
-        public override void DisplayMagazineSize()
-        {
-            Console.WriteLine($"Capacity: {capacityMag}");
-        }
-        public override void Arsenal()
-        {
-            Console.WriteLine($"{gunName} is stored in Arsenal");
-        }
-    }
-    class Kar98k : Armas
-    {
-        public override void DisplayGunName() 
-        {
-            Console.WriteLine($"Gun name: {gunName}");
-        }
-        public override void DisplayMagazineSize()
-        {
-            Console.WriteLine($"Capacity: {capacityMag}");
-        }
-        public override void Arsenal()
-        {
-            Console.WriteLine($"{gunName} is stored in Arsenal");
-        }
-    }//  Class 5 END         ===================================================
 }

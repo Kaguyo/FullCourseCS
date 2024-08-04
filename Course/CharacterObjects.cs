@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullCourseCS
+namespace FullCourseCS.Course
 {
     class Characters
     {
-        public String name;
+        public string name;
         public int age;
 
         public void Introduce()

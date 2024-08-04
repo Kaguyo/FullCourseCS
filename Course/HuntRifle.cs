@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullCourseCS
+namespace FullCourseCS.Course
 {
     public class HuntRifle
     {
-        String magazine;
+        string magazine;
         int ammo;
 
-        public HuntRifle(String magazine)
+        public HuntRifle(string magazine)
         {
             this.magazine = magazine;
         }
-        public HuntRifle(String magazine, int ammo)
+        public HuntRifle(string magazine, int ammo)
         {
             this.magazine = magazine;
             this.ammo = ammo;
         }
-        public void Carbine() 
+        public void Carbine()
         {
             if (ammo <= 0 && magazine != null)
             {
@@ -28,7 +28,7 @@ namespace FullCourseCS
                 Console.WriteLine("\n[Magazine]: Makes chambering bullets is a lot faster");
                 Console.WriteLine("There is no ammunition");
             }
-            else if (ammo > 0 && (magazine != null && magazine != ""))
+            else if (ammo > 0 && magazine != null && magazine != "")
             {
                 if (ammo > 8) { ammo = 8; }
                 Console.Write("\nThere is ammunition. (" + ammo + " Rounds left)");

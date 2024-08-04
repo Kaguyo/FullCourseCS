@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullCourseCS
+namespace FullCourseCS.Course
 {
     public class Animal
     {
         // Abstract classes = modifier that indicates missing components or incomplete implementation
-        public String id = "";
+        public string id = "";
         public double maxSpeed = 0;
         public double speed = 0;
         public double weight = 0;
-        public String type = "";
-        public void move(String animalId, double animalSpeed, double animalWeight, String animalType, double animalMaxSpeed)
+        public string type = "";
+        public void move(string animalId, double animalSpeed, double animalWeight, string animalType, double animalMaxSpeed)
         {
             if (animalType == "Predator" && animalMaxSpeed / animalSpeed <= 1.3333333333)
             {
                 Console.WriteLine($"{animalId} is hunting! ({animalSpeed} Km/h).");
             }
-            else if ((animalType == "Predator" || animalType == "Prey") && (animalMaxSpeed / animalSpeed > 1.3333333333 && animalMaxSpeed / animalSpeed <= 2))
+            else if ((animalType == "Predator" || animalType == "Prey") && animalMaxSpeed / animalSpeed > 1.3333333333 && animalMaxSpeed / animalSpeed <= 2)
             {
                 Console.WriteLine($"{animalId} is running. ({animalSpeed} Km/h).");
             }
