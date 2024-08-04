@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using NAudio.Wave;
+using System.Xml.Linq;
 
 namespace FullCourseCS.Course.CharactersFate
 {
     internal class Artoria : FullCourseCS.Course.Interfaces.ISaber
     {
-        public String name = "Artoria";
+        internal String name = "Artoria";
         private static Random random = new Random();
         private static IWavePlayer waveOutDevice; // Para tocar áudio
         private static WaveStream audioFileReader; // Para ler o arquivo de áudio
@@ -19,21 +20,26 @@ namespace FullCourseCS.Course.CharactersFate
         {
             WriteColored(name, ConsoleColor.Yellow);
             Console.WriteLine(":");
-
             int choice = random.Next(1, 5);
-
+            int lastChoice;
+            
+            
             switch (choice)
             {
                 case 1:
+                    lastChoice = choice;
                     PerformComment1();
                     break;
                 case 2:
+                    lastChoice = choice;
                     PerformComment2();
                     break;
                 case 3:
+                    lastChoice = choice;
                     PerformComment3();
                     break;
                 case 4:
+                    lastChoice = choice;
                     PerformComment4();
                     break;
             }
@@ -43,9 +49,13 @@ namespace FullCourseCS.Course.CharactersFate
         {
             WriteColored(name, ConsoleColor.Yellow);
             Console.WriteLine(":");
-            
             int choice = random.Next(1, 4);
+            int lastChoice = 0;
 
+            while (choice == lastChoice)
+            {
+                choice = random.Next(1, 4);
+            }
             switch (choice)
             {
                 case 1:
@@ -195,6 +205,7 @@ namespace FullCourseCS.Course.CharactersFate
                 }
                 else if (c == 'E')
                 {
+                    Thread.Sleep(0200);
                     WriteColored2(ConsoleColor.Yellow);
                     Console.Write(c);
                     Thread.Sleep(42);
@@ -242,6 +253,7 @@ namespace FullCourseCS.Course.CharactersFate
                 }
                 else if (c == 'E')
                 {
+                    Thread.Sleep(0200);
                     WriteColored2(ConsoleColor.Yellow);
                     Console.Write(c);
                     Thread.Sleep(42);

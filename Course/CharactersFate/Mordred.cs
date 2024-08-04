@@ -8,5 +8,6 @@ namespace FullCourseCS.Course.CharactersFate
 {
     internal class Mordred
     {
+        internal String name = "Mordred";
     }
 }

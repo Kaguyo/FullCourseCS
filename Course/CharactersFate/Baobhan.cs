@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FullCourseCS.Course.CharactersFate
 {
-    internal class Baobhan
+    internal class Baobhan : FullCourseCS.Course.Interfaces.IArcher
     {
+        internal String name = "Baobhan";
     }
 }

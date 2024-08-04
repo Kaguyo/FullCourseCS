@@ -8,5 +8,6 @@ namespace FullCourseCS.Course.CharactersFate
 {
     internal class FirstHassan
     {
+        internal String name = "FirstHassan";
     }
 }

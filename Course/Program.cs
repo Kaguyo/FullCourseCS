@@ -1,5 +1,6 @@
 ﻿using System;
 using NAudio.Wave;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace FullCourseCS.Course
 {
@@ -174,12 +175,73 @@ namespace FullCourseCS.Course
                 while (PararJogo != "stop" && PararJogo != "0")
                 {
                     FullCourseCS.Course.CharactersFate.Artoria artoria = new FullCourseCS.Course.CharactersFate.Artoria();
-                    artoria.name = "Artoria";
+                    FullCourseCS.Course.CharactersFate.Baobhan baobhan = new FullCourseCS.Course.CharactersFate.Baobhan();
+                    FullCourseCS.Course.CharactersFate.Mordred mordred = new FullCourseCS.Course.CharactersFate.Mordred();
+                    FullCourseCS.Course.CharactersFate.Tristan tristan = new FullCourseCS.Course.CharactersFate.Tristan();
+                    FullCourseCS.Course.CharactersFate.FirstHassan firstHassan = new FullCourseCS.Course.CharactersFate.FirstHassan();
+                    FullCourseCS.Course.CharactersFate.Okada okada = new FullCourseCS.Course.CharactersFate.Okada();
+                    
+                    String[] personagens = { artoria.name, baobhan.name, okada.name, mordred.name };
+                    String escolhaPersonagem = "";
+                    while (!(personagens.Contains(escolhaPersonagem)
+                            && escolhaPersonagem != "1"
+                            && escolhaPersonagem != "2"
+                            && escolhaPersonagem != "3"
+                            && escolhaPersonagem != "4"
+                            && escolhaPersonagem != "5"
+                            && escolhaPersonagem != "6"
+                            && escolhaPersonagem != "0")) 
+                    {
+                        Console.Clear();
+                        Console.WriteLine("===============");
+                        WriteColored("Select a Servant", ConsoleColor.Green);
+                        Console.WriteLine(":");
+                        Console.WriteLine("===============\n");
+                        
+                        for (int i = 0; i < personagens.Length; i++) 
+                        {
+                            if (personagens[i].Contains("Artoria"))
+                            {
+                                WriteColored(personagens[i], ConsoleColor.Yellow);
+                                Console.Write(" (");
+                                WriteColored((i + 1), ConsoleColor.Green);
+                                Console.WriteLine(")");
+                            }
+                            else if (personagens[i].Contains("Hassan"))
+                            {
+                                WriteColored(personagens[i], ConsoleColor.DarkMagenta);
+                                Console.Write(" (");
+                                WriteColored((i + 1), ConsoleColor.Green);
+                                Console.WriteLine(")");
+                            }
+                            else if (personagens[i].Contains("Baobhan"))
+                            {
+                                WriteColored(personagens[i], ConsoleColor.Magenta);
+                                Console.Write(" (");
+                                WriteColored((i + 1), ConsoleColor.Green);
+                                Console.WriteLine(")");
+                            }
+                            else if (personagens[i].Contains("Okada"))
+                            {
+                                WriteColored(personagens[i], ConsoleColor.DarkGray);
+                                Console.Write(" (");
+                                WriteColored((i + 1), ConsoleColor.Green);
+                                Console.WriteLine(")");
+                            }
+                        }
+                        Console.Write("\n\nLeave Game ( ");
+                        WriteColored(0, ConsoleColor.Green);
+                        Console.Write(" / ");
+                        WriteColored("STOP", ConsoleColor.Green);
+                        Console.WriteLine(")");
 
+                        Console.Write("\nSelect: ");
+                        escolhaPersonagem = Console.ReadLine().ToLower();
+                    }
                     Console.WriteLine("===============");
                     WriteColored("Skills", ConsoleColor.Green);
                     Console.WriteLine(":");
-                    Console.WriteLine("===============");
+                    Console.WriteLine("===============\n");
 
                     Console.Write("Basic Skill (");
                     WriteColored("1", ConsoleColor.Green);
@@ -214,15 +276,18 @@ namespace FullCourseCS.Course
                     }
                     else if (EscolhaSkill == "0" ||
                     EscolhaSkill == "stop") { break; }
-                    FullCourseCS.Course.CharactersFate.Mordred mordred = new FullCourseCS.Course.CharactersFate.Mordred();
-                    FullCourseCS.Course.CharactersFate.Tristan tristan = new FullCourseCS.Course.CharactersFate.Tristan();
-                    FullCourseCS.Course.CharactersFate.Baobhan baobhan = new FullCourseCS.Course.CharactersFate.Baobhan();
-                    FullCourseCS.Course.CharactersFate.FirstHassan firstHassan = new FullCourseCS.Course.CharactersFate.FirstHassan();
-                    FullCourseCS.Course.CharactersFate.Okada okada = new FullCourseCS.Course.CharactersFate.Okada();
                 }
             }// END IF
             //  Class 6 END         ===================================================
         }
+
+        private static void WriteColored(int i, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(i);
+            Console.ResetColor();
+        }
+
         static void WriteColored(string text, ConsoleColor color)
         {
             Console.ForegroundColor = color;
