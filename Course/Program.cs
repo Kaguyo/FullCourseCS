@@ -1,6 +1,5 @@
 ﻿using System;
-using NAudio.Wave;
-using static System.Net.Mime.MediaTypeNames;
+using System.Collections.Generic;
 
 namespace FullCourseCS.Course
 {
@@ -167,6 +166,35 @@ namespace FullCourseCS.Course
                 Console.WriteLine("\nFim da aula 5.\n");
             }// END IF
             //  Class 5 END         ===================================================
+            bool playAula6 = true;
+            if (playAula6)
+            {
+                String[] food = new string[3];
+
+                food[0] = "pizza";
+                food[1] = "hamburger";
+                food[2] = "hotdog";
+
+                List<String> food2 = new List<String>();
+
+                food2.Add("pizza");
+                food2.Add("soda");
+                food2.Add("fries");
+                food2.Add("potatos");
+                food2.Remove("potatoes");
+                food2.Insert(0, "Sushi");
+                Console.Write("Is there potatoes in food2 list?: " +  food2.Contains("potatoes"));
+                // food2.Sort();
+                // food2.Reverse();
+                // food2.Clear();
+               
+                food.ToArray();
+                foreach (String c in food)
+                    { Console.WriteLine(c); }
+
+                Console.WriteLine("\nFim da aula 6.\n");
+            }// END IF
+            //  Class 6 END         ===================================================
         }
     }
 }
