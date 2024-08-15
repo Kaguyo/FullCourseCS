@@ -166,7 +166,7 @@ namespace FullCourseCS.Course
                 Console.WriteLine("\nFim da aula 5.\n");
             }// END IF
             //  Class 5 END         ===================================================
-            bool playAula6 = true;
+            bool playAula6 = false;
             if (playAula6)
             {
                 String[] food = new string[3];
@@ -182,11 +182,14 @@ namespace FullCourseCS.Course
                 food2.Add("fries");
                 food2.Add("potatoes");
                 food2.Remove("potatoes");
-                food2.Insert(0, "Sushi");
+                food2.Insert(0, "sushi");
+                food2.Add("sushi");
                 Console.Write("Is there potatoes in food2 list?: " + food2.Contains("potatoes"));
                 // food2.Sort();
                 // food2.Reverse(); // Inverts List
                 // food2.Clear();
+                Console.WriteLine(food2.Count());
+                Console.WriteLine(food2.LastIndexOf("fries"));
                 String[] food2Array = food2.ToArray();
                 Console.WriteLine("\nFor i in list:\n");
                 foreach (String c in food2)
@@ -198,6 +201,40 @@ namespace FullCourseCS.Course
                 Console.WriteLine("\nFim da aula 6.\n");
             }// END IF
             //  Class 6 END         ===================================================
+            bool playAula7 = true;
+            if (playAula7)
+            {
+                List<Player> players = new List<Player>();
+
+                Player player1 = new Player("Chad");
+                Player player2 = new Player("Katheryn");
+                Player player3 = new Player("Kley");
+
+                players.Add(player1);
+                players.Add(player2);
+                players.Add(player3);
+
+                foreach (Player player in players)
+                {
+                    Console.WriteLine(player.username);
+                    // Console.WriteLine(player); possible thanks to override method
+                }
+
+            }// END IF
+            //  Class 7 END         ===================================================
+        }
+    }
+    class Player
+    {
+        public String username;
+
+        public Player(String username) 
+        {
+            this.username = username;
+        }
+        public override string ToString() 
+        {
+            return username;
         }
     }
 }
