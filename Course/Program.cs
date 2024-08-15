@@ -180,17 +180,20 @@ namespace FullCourseCS.Course
                 food2.Add("pizza");
                 food2.Add("soda");
                 food2.Add("fries");
-                food2.Add("potatos");
+                food2.Add("potatoes");
                 food2.Remove("potatoes");
                 food2.Insert(0, "Sushi");
-                Console.Write("Is there potatoes in food2 list?: " +  food2.Contains("potatoes"));
+                Console.Write("Is there potatoes in food2 list?: " + food2.Contains("potatoes"));
                 // food2.Sort();
-                // food2.Reverse();
+                // food2.Reverse(); // Inverts List
                 // food2.Clear();
-               
-                food.ToArray();
-                foreach (String c in food)
+                String[] food2Array = food2.ToArray();
+                Console.WriteLine("\nFor i in list:\n");
+                foreach (String c in food2)
                     { Console.WriteLine(c); }
+                Console.WriteLine("\nFor i in Arraylist:\n");
+                foreach (String c in food2Array)
+                { Console.WriteLine(c); }
 
                 Console.WriteLine("\nFim da aula 6.\n");
             }// END IF
