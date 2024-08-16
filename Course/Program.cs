@@ -206,13 +206,15 @@ namespace FullCourseCS.Course
             {
                 List<Player> players = new List<Player>();
 
-                Player player1 = new Player("Chad");
-                Player player2 = new Player("Katheryn");
-                Player player3 = new Player("Kley");
+                Player player1 = new Player();
+                Player player2 = new Player();
+                Player player3 = new Player("Katheryn");
+                Player player4 = new Player("Kley");
 
                 players.Add(player1);
                 players.Add(player2);
                 players.Add(player3);
+                players.Add(player4);
 
                 foreach (Player player in players)
                 {
@@ -228,7 +230,12 @@ namespace FullCourseCS.Course
     {
         public String username;
 
-        public Player(String username) 
+        // Usando Overload
+        public Player() 
+        {
+            username = "Kayea";
+        }
+        public Player(String username)
         {
             this.username = username;
         }
