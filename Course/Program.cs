@@ -193,7 +193,7 @@ namespace FullCourseCS.Course
                 String[] food2Array = food2.ToArray();
                 Console.WriteLine("\nFor i in list:\n");
                 foreach (String c in food2)
-                    { Console.WriteLine(c); }
+                { Console.WriteLine(c); }
                 Console.WriteLine("\nFor i in Arraylist:\n");
                 foreach (String c in food2Array)
                 { Console.WriteLine(c); }
@@ -201,7 +201,7 @@ namespace FullCourseCS.Course
                 Console.WriteLine("\nFim da aula 6.\n");
             }// END IF
             //  Class 6 END         ===================================================
-            bool playAula7 = true;
+            bool playAula7 = false;
             if (playAula7)
             {
                 List<Player> players = new List<Player>();
@@ -224,24 +224,36 @@ namespace FullCourseCS.Course
 
             }// END IF
             //  Class 7 END         ===================================================
-        }
-    }
-    class Player
-    {
-        public String username;
+            bool playAula8 = true;
+            if (playAula8)
+            {
+                Console.WriteLine("\nExiba os dispositivos ligados:\n");
 
-        // Usando Overload
-        public Player(String username)
-        {
-            this.username = username;
+                Interfaces.Eletrodomesticos.Dispositivos.Geladeira.Ligar();
+                Interfaces.Eletrodomesticos.Dispositivos.Aquecedor.Ligar();
+                Interfaces.Eletrodomesticos.Dispositivos.MicroOndas.Ligar();
+                
+
+            }// END IF
+            //  Class 8 END         ===================================================
         }
-        public Player()
+        class Player
         {
-            username = "Kayea";
-        }
-        public override string ToString() 
-        {
-            return username;
+            public String username;
+
+            // Usando Overload
+            public Player(String username)
+            {
+                this.username = username;
+            }
+            public Player()
+            {
+                username = "Kayea";
+            }
+            public override string ToString()
+            {
+                return username;
+            }
         }
     }
 }

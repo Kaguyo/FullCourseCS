@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FullCourseCS.Course.Interfaces
 {
-    internal interface IEletrodomestico
+    interface IEletrodomestico
     {
+        virtual void Ligar() 
+        {
+            Console.WriteLine("O dispositivo está ligado");
+        }
     }
 }
