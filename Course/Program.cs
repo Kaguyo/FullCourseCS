@@ -231,13 +231,13 @@ namespace FullCourseCS.Course
         public String username;
 
         // Usando Overload
-        public Player() 
-        {
-            username = "Kayea";
-        }
         public Player(String username)
         {
             this.username = username;
+        }
+        public Player()
+        {
+            username = "Kayea";
         }
         public override string ToString() 
         {
