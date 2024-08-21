@@ -224,7 +224,7 @@ namespace FullCourseCS.Course
 
             }// END IF
             //  Class 7 END         ===================================================
-            bool playAula8 = true;
+            bool playAula8 = false;
             if (playAula8)
             {
                 Console.WriteLine("\nExiba os dispositivos ligados:\n");
@@ -236,6 +236,14 @@ namespace FullCourseCS.Course
 
             }// END IF
             //  Class 8 END         ===================================================
+            bool playAula9 = true;
+            if (playAula9)
+            {
+                Motorbike XJ6 = new Motorbike("YMH", "XJ6");
+                XJ6.Make = "Hornet";
+                XJ6.Model = "R1";
+                Console.WriteLine("\n"+XJ6.Make + ": " +XJ6.Model);
+            }
         }
         class Player
         {
@@ -253,6 +261,42 @@ namespace FullCourseCS.Course
             public override string ToString()
             {
                 return username;
+            }
+        }
+        class Motorbike
+        {
+            private String make;
+            private String model;
+
+            public Motorbike(string make, string model)
+            {
+                this.make = make;
+                this.model = model;
+            }
+            public String Make
+            {
+                // Permite apenas makes da Yamaha
+                get 
+                {
+                    make = "Yamaha";
+                    return make;
+                }
+                set
+                { 
+                    make = value; 
+                }
+            }
+            public String Model
+            {
+                // Permite apenas makes da Yamaha
+                get
+                {
+                    return model;
+                }
+                set 
+                { 
+                    model = value; 
+                }
             }
         }
     }
