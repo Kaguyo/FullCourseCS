@@ -243,6 +243,9 @@ namespace FullCourseCS.Course
                 XJ6.Make = "Hornet";
                 XJ6.Model = "R1";
                 Console.WriteLine("\n"+XJ6.Make + ": " +XJ6.Model);
+
+                Motorbike Motocicleta = new Motorbike("Honda","CB-1000R");
+                Console.WriteLine(Motocicleta.Make+": "+Motocicleta.Model);
             }
         }
         class Player
@@ -268,37 +271,39 @@ namespace FullCourseCS.Course
             private String make;
             private String model;
 
-            public Motorbike(string make, string model)
-            {
-                this.make = make;
-                this.model = model;
-            }
             public String Make
             {
-                // Permite apenas makes da Yamaha
-                get 
+                
+                get // Readable
                 {
-                    make = "Yamaha";
+                    // Permite apenas makes da Yamaha
+                    // make = "Yamaha";
                     return make;
                 }
-                set
+                set // Writable
                 { 
                     make = value; 
                 }
             }
+            
             public String Model
             {
                 // Permite apenas makes da Yamaha
-                get
+                get // Readable
                 {
                     return model;
                 }
-                set 
+                set // Writable
                 { 
                     model = value; 
                 }
+                //  Basicamente, esse campo faz o mesmo que a lógica default faria. (get; set;)
+            }
+            public Motorbike(string make, string model)
+            {
+                this.Make = make;
+                this.Model = model;
             }
         }
     }
-}
-               
+}    
