@@ -236,7 +236,7 @@ namespace FullCourseCS.Course
 
             }// END IF
             //  Class 8 END         ===================================================
-            bool playAula9 = true;
+            bool playAula9 = false;
             if (playAula9)
             {
                 Motorbike XJ6 = new Motorbike("YMH", "XJ6");
@@ -246,7 +246,20 @@ namespace FullCourseCS.Course
 
                 Motorbike Motocicleta = new Motorbike("Honda","CB-1000R");
                 Console.WriteLine(Motocicleta.Make+": "+Motocicleta.Model);
-            }
+
+                Console.WriteLine();
+            }// END IF
+            //  Class 9 END         ===================================================
+            bool playAula10 = true;
+            if (playAula10)
+            {
+                Console.WriteLine(StarRailIndex.March7th + " is character #" + (int)StarRailIndex.March7th);
+                Console.WriteLine(StarRailIndex.Seele + " is character #" + (int)StarRailIndex.Seele);
+                Console.WriteLine("\n" + StarRailIndex.Seele + "'s Atk: " + (int)StarRailAtk.Seele);
+                
+                Console.WriteLine();
+            }// END IF
+            //  Class 10 END         ===================================================
         }
         class Player
         {
@@ -304,6 +317,30 @@ namespace FullCourseCS.Course
                 this.Make = make;
                 this.Model = model;
             }
+        }
+        //  Enums = special "class" that contains a set of named integer constants.
+        //  Use enums when you have values that you know will not change.
+        enum StarRailIndex
+        {
+            Seele = 1,
+            March7th = 2,
+            Himeko = 3,
+            Aventurine = 4,
+            Topaz = 5,
+            Serval = 6,
+            Silverwolf = 7,
+            Bronya = 8
+        }
+        enum StarRailAtk 
+        {
+            Seele = 2900,
+            March7th = 1200,
+            Himeko = 3300,
+            Aventurine = 1300,
+            Topaz = 3000,
+            Serval = 3200,
+            Silverwolf = 2000,
+            Bronya = 1500
         }
     }
 }    
