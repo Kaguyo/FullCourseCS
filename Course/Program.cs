@@ -256,7 +256,18 @@ namespace FullCourseCS.Course
                 Console.WriteLine(StarRailIndex.March7th + " is character #" + (int)StarRailIndex.March7th);
                 Console.WriteLine(StarRailIndex.Seele + " is character #" + (int)StarRailIndex.Seele);
                 Console.WriteLine("\n" + StarRailIndex.Seele + "'s Atk: " + (int)StarRailAtk.Seele);
-                
+
+                Thread mainThread = Thread.CurrentThread;
+                mainThread.Name = "Main Thread";
+                Thread thread1 = new Thread(CountUp);
+                Thread thread2 = new Thread(CountDown);
+
+                String[] array = { "Seele", "Bronya"};
+                Thread thread3 = new Thread(() => MostrarElementos(array));
+                thread1.Start();
+                thread2.Start();
+                thread3.Start();
+
                 Console.WriteLine();
             }// END IF
             //  Class 10 END         ===================================================
@@ -341,6 +352,30 @@ namespace FullCourseCS.Course
             Serval = 3200,
             Silverwolf = 2000,
             Bronya = 1500
+        }
+        //  Generics
+        static void MostrarElementos<T>(T[] elemento) 
+        {
+            foreach (T item in elemento) 
+            {
+                Console.WriteLine(item);
+            }
+        }
+        static void CountUp()
+        {
+            for (int i = 0; i <= 10; i++) 
+            {
+                Console.WriteLine("Count Up: " + i);
+                Thread.Sleep(1000);
+            }
+        }
+        static void CountDown()
+        {
+            for (int i = 10; i >= 0; i--) 
+            {
+                Console.WriteLine("Count Down: " + i);
+                Thread.Sleep(1000);
+            }
         }
     }
 }    
