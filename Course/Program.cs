@@ -232,7 +232,7 @@ namespace FullCourseCS.Course
                 Interfaces.Eletrodomesticos.Dispositivos.Geladeira.Ligar();
                 Interfaces.Eletrodomesticos.Dispositivos.Aquecedor.Ligar();
                 Interfaces.Eletrodomesticos.Dispositivos.MicroOndas.Ligar();
-                
+
 
             }// END IF
             //  Class 8 END         ===================================================
@@ -242,15 +242,15 @@ namespace FullCourseCS.Course
                 Motorbike XJ6 = new Motorbike("YMH", "XJ6");
                 XJ6.Make = "Hornet";
                 XJ6.Model = "R1";
-                Console.WriteLine("\n"+XJ6.Make + ": " +XJ6.Model);
+                Console.WriteLine("\n" + XJ6.Make + ": " + XJ6.Model);
 
-                Motorbike Motocicleta = new Motorbike("Honda","CB-1000R");
-                Console.WriteLine(Motocicleta.Make+": "+Motocicleta.Model);
+                Motorbike Motocicleta = new Motorbike("Honda", "CB-1000R");
+                Console.WriteLine(Motocicleta.Make + ": " + Motocicleta.Model);
 
                 Console.WriteLine();
             }// END IF
             //  Class 9 END         ===================================================
-            bool playAula10 = true;
+            bool playAula10 = false;
             if (playAula10)
             {
                 Console.WriteLine(StarRailIndex.March7th + " is character #" + (int)StarRailIndex.March7th);
@@ -262,7 +262,7 @@ namespace FullCourseCS.Course
                 Thread thread1 = new Thread(CountUp);
                 Thread thread2 = new Thread(CountDown);
 
-                String[] array = { "Seele", "Bronya"};
+                String[] array = { "Seele", "Bronya" };
                 Thread thread3 = new Thread(() => MostrarElementos(array));
                 thread1.Start();
                 thread2.Start();
@@ -271,6 +271,63 @@ namespace FullCourseCS.Course
                 Console.WriteLine();
             }// END IF
             //  Class 10 END         ===================================================
+            bool playAula11 = false;
+            if (playAula11)
+            {
+                int maiorValor = 0;
+                int posterior;
+                int anterior;
+                int y = 1;
+                int x = ArrayEstudo.arrayNumber.Length;
+                for (int i = 0; i < ArrayEstudo.arrayNumber.Length; i++)
+                {
+                    anterior = ArrayEstudo.arrayNumber[i];
+                    if (i - x == -1)
+                    {
+                        posterior = ArrayEstudo.arrayNumber[x - 1];
+                    }
+                    else
+                    {
+                        // Diferente de ultimo index
+                        posterior = ArrayEstudo.arrayNumber[y];
+                    }
+                    if (anterior > posterior && maiorValor < anterior)
+                    {
+                        maiorValor = anterior;
+                    }
+                    else if (anterior < posterior && maiorValor < posterior)
+                    {
+                        maiorValor = posterior;
+                    }
+                    y++;
+                }
+                Console.WriteLine(maiorValor);
+            }// END IF
+            //  Class 11 END         ===================================================
+            bool playAula12 = true;
+            if (playAula12) 
+            {
+                int[] nums = [10, 15, 3, 7];
+                int target = 17;
+                int i = 0;
+                foreach (int x in nums) 
+                {
+                    int anterior = x;
+                    for (int y = 0; y < nums.Length; y++) 
+                    {
+                        if (i - y < 0)
+                        {
+                            if (target == anterior + nums[y])
+                            {
+                                Console.Write(i + "," + y);
+                                Console.WriteLine();
+                            }
+                        }
+                    }
+                    i++;
+                }
+            }// END IF
+            //  Class 12 END         ===================================================
         }
         class Player
         {
